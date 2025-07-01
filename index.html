@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReLoved - Ropa Usada</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff7f2;
+      color: #444;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      background-color: #fce9e0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      color: #d67c82;
+    }
+
+    nav {
+      background-color: #f8d4d9;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #b3475d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .portada {
+      width: 100%;
+      height: auto;
+    }
+
+    section {
+      padding: 40px;
+    }
+
+    h2 {
+      color: #b3475d;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f8d4d9;
+      padding-bottom: 5px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .precio {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #d67c82;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+
+    button {
+      background-color: #d67c82;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #b3475d;
+    }
+
+    footer {
+      background-color: #fce9e0;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .whatsapp {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      font-size: 30px;
+      text-align: center;
+      line-height: 60px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ReLoved</h1>
+    <p>Ropa usada con una nueva oportunidad</p>
+  </header>
+
+  <img class="portada" src="imagenes/portada.jpg" alt="Imagen de portada ReLoved">
+
+  <nav>
+    <a href="#remeras">Remeras</a>
+    <a href="#pantalones">Pantalones</a>
+    <a href="#vestidos">Vestidos</a>
+    <a href="#accesorios">Accesorios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="remeras">
+    <h2>Remeras</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/remera1.jpg" alt="Remera 1">
+        <p class="precio">$2.500</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pantalones">
+    <h2>Pantalones</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/pantalon1.jpg" alt="Pantalón 1">
+        <p class="precio">$3.000</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="vestidos">
+    <h2>Vestidos</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/vestido1.jpg" alt="Vestido 1">
+        <p class="precio">$3.800</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="accesorios">
+    <h2>Accesorios</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/accesorio1.jpg" alt="Accesorio 1">
+        <p class="precio">$1.200</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form action="https://formsubmit.co/triniifigueroa99@gmail.com" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
+      <input type="email" name="email" placeholder="Tu email" required><br><br>
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea><br><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Instagram: @reloved.ropa</p>
+    <p>Email: triniifigueroa99@gmail.com</p>
+  </footer>
+
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/5492494004314" class="whatsapp" target="_blank" title="Escribinos por WhatsApp">💬</a>
+
+</body>
+</html>
