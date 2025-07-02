@@ -1,163 +1,262 @@
-    <!DOCTYPE html><html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ReLoved - Ropa Usada</title>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }body {
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff7f2;
+      color: #444;
+    }header {
+  text-align: center;
+  padding: 30px;
+  background-color: #fce9e0;
+}
+
+header h1 {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #fff7f2 url('imagenes/fondo_rosas.jpg') no-repeat center top;
-  background-size: cover;
-  color: #444;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 15px 20px;
-  border-bottom: 1px solid #eacac6;
-}
-
-.logo {
-  font-size: 2em;
+  font-size: 3em;
   color: #d67c82;
+}
+
+nav {
+  background-color: #f8d4d9;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #b3475d;
+  text-decoration: none;
   font-weight: bold;
 }
 
-.search-container input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  outline: none;
-}
-
-.container {
-  display: flex;
-}
-
-.sidebar {
-  width: 220px;
-  background-color: #fce9e0;
-  padding: 20px;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
-
-.sidebar h3 {
-  margin-top: 0;
-  color: #b3475d;
-}
-
-.sidebar a {
-  display: block;
-  margin: 10px 0;
-  text-decoration: none;
-  color: #b3475d;
-}
-
-main {
-  flex: 1;
-  padding: 20px;
-}
-
 .portada {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+section {
+  padding: 40px;
+}
+
+h2 {
+  color: #b3475d;
   margin-bottom: 20px;
-  border-radius: 12px;
+  border-bottom: 2px solid #f8d4d9;
+  padding-bottom: 5px;
 }
 
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
 }
 
 .item {
-  background-color: white;
+  background-color: #fff;
   border-radius: 10px;
   padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  cursor: pointer;
 }
 
 .item img {
   width: 100%;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.item img:hover {
-  transform: scale(1.05);
+  border-radius: 10px;
 }
 
 .precio {
+  margin-top: 10px;
   font-weight: bold;
   color: #d67c82;
-  margin-top: 10px;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+button {
+  background-color: #d67c82;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b3475d;
 }
 
 footer {
   background-color: #fce9e0;
-  padding: 20px;
   text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 5px 0;
 }
 
 .whatsapp {
   position: fixed;
+  width: 60px;
+  height: 60px;
   bottom: 25px;
   right: 25px;
   background-color: #25d366;
   color: white;
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
   z-index: 100;
+  text-decoration: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background-color: #fff7f2;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-imagenes img {
+  width: 45%;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #b3475d;
 }
 
   </style>
 </head>
-<body>
-  <header>
-    <div class="logo">ReLoved</div>
-    <div class="search-container">
-      <input type="text" id="buscador" placeholder="Buscar prendas...">
+<body>  <header>
+    <h1>ReLoved</h1>
+  </header>  <img class="portada" src="imagenes/portada.jpg" alt="Imagen de portada ReLoved">  <nav>
+    <a href="#remeras">Remeras</a>
+    <a href="#pantalones">Pantalones</a>
+    <a href="#vestidos">Vestidos</a>
+    <a href="#abrigos">Abrigos</a>
+    <a href="#accesorios">Accesorios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>  <section id="remeras">
+    <h2>Remeras</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/remera1.jpg" alt="Remera 1">
+        <p class="precio">$2.500</p>
+      </div>
     </div>
-  </header>  <div class="container">
-    <aside class="sidebar">
-      <h3>Categorías</h3>
-      <a href="#remeras">Remeras</a>
-      <a href="#camisas">Camisas</a>
-      <a href="#pantalones">Pantalones</a>
-      <a href="#shorts">Shorts</a>
-      <a href="#jeans">Jeans</a>
-      <a href="#bombachas">Bombachas de campo</a>
-      <a href="#vestidos">Vestidos</a>
-      <a href="#polleras">Polleras</a>
-      <a href="#buzos">Buzos</a>
-      <a href="#camperas">Camperas</a>
-      <a href="#chalecos">Chalecos</a>
-      <a href="#zapatos">Zapatos</a>
-      <a href="#zapatillas">Zapatillas</a>
-      <a href="#borcegos">Borcegos</a>
-    </aside><main>
-  <img class="portada" src="imagenes/portada.jpg" alt="Portada ReLoved">
+  </section>  <section id="pantalones">
+    <h2>Pantalones</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/pantalon1.jpg" alt="Pantalón 1">
+        <p class="precio">$3.000</p>
+      </div>
+    </div>
+  </section>  <section id="vestidos">
+    <h2>Vestidos</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/vestido1.jpg" alt="Vestido 1">
+        <p class="precio">$3.800</p>
+      </div>
+    </div>
+  </section>  <section id="abrigos">
+    <h2>Abrigos</h2><h3 style="color: #b3475d; margin-top: 30px;">Chalecos</h3>
+<div class="galeria">
+  <div class="item">
+    <img src="imagenes/chaleco1.jpg" alt="Chaleco de cuero" onclick="mostrarModalChaleco()">
+    <p class="precio">$30.000</p>
+  </div>
+</div>
 
-  <section id="inicio">
-    <h2>¡Bienvenida a ReLoved!</h2>
-    <p>Encontranos en <strong>Instagram @reloved.tandil</strong><br>O escribinos al <
+  </section>  <section id="accesorios">
+    <h2>Accesorios</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/accesorio1.jpg" alt="Accesorio 1">
+        <p class="precio">$1.200</p>
+      </div>
+    </div>
+  </section>  <section id="contacto">
+    <h2>Contacto</h2>
+    <form action="https://formsubmit.co/triniifigueroa99@gmail.com" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
+      <input type="email" name="email" placeholder="Tu email" required><br><br>
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea><br><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>  <footer>
+    <p>Instagram: @reloved.tandil</p>
+    <p>Email: triniifigueroa99@gmail.com</p>
+  </footer><a href="https://wa.me/5492494004314" class="whatsapp" target="_blank" title="Escribinos por WhatsApp">💬</a>
 
+  <!-- Modal para Chaleco -->  <div id="modalChaleco" class="modal" onclick="cerrarModalChaleco()">
+    <div class="modal-contenido" onclick="event.stopPropagation()">
+      <span class="cerrar" onclick="cerrarModalChaleco()">×</span>
+      <h2>Chaleco de cuero</h2>
+      <div class="modal-imagenes">
+        <img src="imagenes/chaleco1.jpg" alt="Frente del chaleco">
+        <img src="imagenes/chaleco2.jpg" alt="Espalda del chaleco">
+      </div>
+      <ul>
+        <li><strong>Talle:</strong> M</li>
+        <li><strong>Estado:</strong> Sin uso</li>
+        <li><strong>Precio:</strong> $30.000</li>
+      </ul>
+    </div>
+  </div>  <script>
+    function mostrarModalChaleco() {
+      document.getElementById("modalChaleco").style.display = "flex";
+    }
+
+    function cerrarModalChaleco() {
+      document.getElementById("modalChaleco").style.display = "none";
+    }
+  </script></body>
+</html>
