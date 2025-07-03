@@ -1,3 +1,4 @@
+Tú dijiste:
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -67,7 +68,6 @@
       padding: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
-      cursor: pointer;
     }
 
     .item img {
@@ -81,46 +81,34 @@
       color: #d67c82;
     }
 
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-    }
-
-    .modal-content {
-      background-color: #fff;
-      margin: 5% auto;
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
       padding: 20px;
       border-radius: 10px;
-      max-width: 500px;
-      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .modal-content img {
+    input, textarea {
       width: 100%;
-      margin-bottom: 10px;
-      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
     }
 
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
+    button {
+      background-color: #d67c82;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
     }
 
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
+    button:hover {
+      background-color: #b3475d;
     }
 
     footer {
@@ -128,6 +116,10 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
     }
 
     .whatsapp {
@@ -149,6 +141,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>ReLoved</h1>
   </header>
@@ -167,12 +160,141 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <section id="remeras">
-    <h2>Remeras</h2>
+ <section id="remeras">
+  <h2>Remeras</h2>
+  <div class="galeria">
+
+    <div class="item">
+      <img src="imagenes/1.jpg" alt="Camisa Wanama" class="zoomable">
+      <p>Camisa beige - Wanama<br>Talle M<br><span class="precio">$5000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/2.jpg" alt="Musculosa negra 1" class="zoomable">
+      <img src="imagenes/3.jpg" alt="Musculosa negra 2" class="zoomable">
+      <p>Musculosa negra con breteles ajustables<br>Talle M<br><span class="precio">$6000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/4.jpg" alt="Remera Isostasia 1" class="zoomable">
+      <img src="imagenes/5.jpg" alt="Remera Isostasia 2" class="zoomable">
+      <p>Remera isostasia beige<br>Talle M<br><span class="precio">$4000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/6.jpg" alt="Remera Beatles 1" class="zoomable">
+      <img src="imagenes/7.jpg" alt="Remera Beatles 2" class="zoomable">
+      <p>Remera negra The Beatles<br>Talle M<br><span class="precio">$5000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/8.jpg" alt="Top hilo 1" class="zoomable">
+      <img src="imagenes/9.jpg" alt="Top hilo 2" class="zoomable">
+      <p>Remera de hilo una manga beige<br>Talle M<br><span class="precio">$5000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/10.jpg" alt="Musculosa naranja 1" class="zoomable">
+      <img src="imagenes/11.jpg" alt="Musculosa naranja 2" class="zoomable">
+      <p>Musculosa Sant Antoni naranja<br>Talle S<br><span class="precio">$7000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/12.jpg" alt="Musculosa verde 1" class="zoomable">
+      <img src="imagenes/13.jpg" alt="Musculosa verde 2" class="zoomable">
+      <p>Musculosa Sant Antoni verde olivo<br>Talle S<br><span class="precio">$7000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/14.jpg" alt="Remera verde 1" class="zoomable">
+      <img src="imagenes/15.jpg" alt="Remera verde 2" class="zoomable">
+      <p>Remera verde Sant Antoni una manga<br>Talle M<br><span class="precio">$5000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/16.jpg" alt="Banana Republic 1" class="zoomable">
+      <img src="imagenes/17.jpg" alt="Banana Republic 2" class="zoomable">
+      <p>Remera blanca Banana Republic con botones en la espalda<br>Talle S<br><span class="precio">$6000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/18.jpg" alt="Musculosa gris 1" class="zoomable">
+      <img src="imagenes/19.jpg" alt="Musculosa gris 2" class="zoomable">
+      <p>Musculosa de hilo gris con volado<br>Talle S<br><span class="precio">$5000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/20.jpg" alt="Camisa Kevingstone" class="zoomable">
+      <p>Camisa Kevingstone verde agua<br>Talle S<br><span class="precio">$7000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/21.jpg" alt="Remera Wanama" class="zoomable">
+      <p>Remera básica negra - Wanama<br>Talle M<br><span class="precio">$4000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/22.jpg" alt="Musculosa broderie 1" class="zoomable">
+      <img src="imagenes/23.jpg" alt="Musculosa broderie 2" class="zoomable">
+      <p>Musculosa beige con flores de broderie en los hombros<br>Talle M<br><span class="precio">$6000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/24.jpg" alt="Musculosa mostaza 1" class="zoomable">
+      <img src="imagenes/25.jpg" alt="Musculosa mostaza 2" class="zoomable">
+      <p>Musculosa de hilo color mostaza<br>Talle M<br><span class="precio">$5000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/26.jpg" alt="Musculosa hilo beige" class="zoomable">
+      <p>Musculosa de hilo color beige<br>Talle M<br><span class="precio">$5000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/27.jpg" alt="Camisa bordada Le Utthe" class="zoomable">
+      <p>Camisa bordada Le Utthe<br>Talle S<br><span class="precio">$10000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/28.jpg" alt="Remera básica negra" class="zoomable">
+      <p>Remera básica color negro<br>Talle M<br><span class="precio">$3000</span></p>
+    </div>
+
+    <div class="item">
+      <img src="imagenes/29.jpg" alt="Chomba Pampero" class="zoomable">
+      <p>Chomba Pampero azul marino<br>Talle M<br><span class="precio">$5000</span></p>
+    </div>
+
+  </div>
+</section>
+
+
+  <section id="pantalones">
+    <h2>Pantalones</h2>
     <div class="galeria">
-      <div class="item" onclick="openModal('1.jpg', '2.jpg', 'Camisa beige - Wanama', 'Talle M', '$5000')">
-        <img src="imagenes/1.jpg" alt="Camisa Wanama">
-        <p>Camisa beige - Wanama<br>Talle M<br><span class="precio">$5000</span></p>
+      <div class="item">
+        <img src="imagenes/pantalon1.jpg" alt="Pantalón 1">
+        <p class="precio">$3.000</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="vestidos">
+    <h2>Vestidos</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/vestido1.jpg" alt="Vestido 1">
+        <p class="precio">$3.800</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="accesorios">
+    <h2>Accesorios</h2>
+    <div class="galeria">
+      <div class="item">
+        <img src="imagenes/accesorio1.jpg" alt="Accesorio 1">
+        <p class="precio">$1.200</p>
       </div>
     </div>
   </section>
@@ -194,30 +316,24 @@
 
   <a href="https://wa.me/5492494004314" class="whatsapp" target="_blank" title="Escribinos por WhatsApp">💬</a>
 
-  <div id="productModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <img id="modalImg1" src="" alt="Imagen 1">
-      <img id="modalImg2" src="" alt="Imagen 2">
-      <p id="modalTitle"></p>
-      <p id="modalTalle"></p>
-      <p class="precio" id="modalPrecio"></p>
-    </div>
-  </div>
+  <!-- MODAL PARA ZOOM -->
+<div id="zoomModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);z-index:1000;justify-content:center;align-items:center;">
+  <img id="zoomImg" src="" style="max-width:90%;max-height:90%;border-radius:10px;box-shadow:0 0 20px #fff;">
+</div>
 
   <script>
-    function openModal(img1, img2, nombre, talle, precio) {
-      document.getElementById('modalImg1').src = 'imagenes/' + img1;
-      document.getElementById('modalImg2').src = 'imagenes/' + img2;
-      document.getElementById('modalTitle').innerText = nombre;
-      document.getElementById('modalTalle').innerText = talle;
-      document.getElementById('modalPrecio').innerText = precio;
-      document.getElementById('productModal').style.display = 'block';
-    }
+  document.querySelectorAll('.zoomable').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      document.getElementById('zoomImg').src = img.src;
+      document.getElementById('zoomModal').style.display = 'flex';
+    });
+  });
 
-    function closeModal() {
-      document.getElementById('productModal').style.display = 'none';
-    }
-  </script>
+  document.getElementById('zoomModal').addEventListener('click', () => {
+    document.getElementById('zoomModal').style.display = 'none';
+  });
+</script>
+
 </body>
 </html>
