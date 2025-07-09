@@ -560,6 +560,20 @@
   document.getElementById('zoomModal').addEventListener('click', () => {
     document.getElementById('zoomModal').style.display = 'none';
   });
+    <script>
+  // Slider en productos con varias imágenes
+  document.querySelectorAll('.slider').forEach(slider => {
+    const images = slider.querySelectorAll('img');
+    let index = 0;
+    images[index].classList.add('active');
+    slider.addEventListener('click', () => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    });
+  });
+</script>
+
 </script>
 
 </body>
